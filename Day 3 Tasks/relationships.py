@@ -1,4 +1,4 @@
-#one to many
+#many to many
 from sqlalchemy import Table,Column,Integer,ForeignKey,String,create_engine
 from sqlalchemy.orm import declarative_base,relationship,sessionmaker
 Base = declarative_base()
