@@ -1,7 +1,7 @@
 # app/core/logger.py
 import logging
 
-logging.basicConfig(filename="newfile.log",filemode ='w')
+logging.basicConfig(filename="newfile.log",filemode ='w+')
 
 
 

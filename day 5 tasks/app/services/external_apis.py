@@ -15,12 +15,16 @@ async def fetch_single(url: str):
         return resp.json()
 
 async def fetch_data_concurrently():
-    
-    logger.info(f"{str(datetime.now())}:: The fetching of data is started")
-    
-    tasks = [fetch_single(url) for url in API_URLS]
-    
-    results = await asyncio.gather(*tasks, return_exceptions=True)
-    
-    logger.info(f"{str(datetime.now())} :: The fectching of data is ended !")
-    return results
+    try:
+        logger.info(f"{str(datetime.now())}:: The fetching of data is started")
+        
+        tasks = [fetch_single(url) for url in API_URLS]
+        
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        
+        logger.info(f"{str(datetime.now())} :: The fectching of data is ended !")
+        return results
+    except Exception as e:
+        logger.exception(e)
+    finally: 
+        logger.info(f"{str(datetime.now())} :: Ended")
