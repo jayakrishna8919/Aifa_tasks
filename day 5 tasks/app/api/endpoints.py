@@ -7,6 +7,7 @@ router = APIRouter()
 
 @router.get("/data", response_model=APIDataResponse)
 async def get_data():
+   
     #here we are Fetching data from multiple external APIs concurrently
     data = await fetch_data_concurrently()
     return {"data": data,"success":True}

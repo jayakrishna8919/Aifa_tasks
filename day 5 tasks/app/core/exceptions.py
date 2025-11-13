@@ -1,4 +1,4 @@
-# app/core/exceptions.py
+# Exception hierarchy
 from fastapi import HTTPException
 
 class BaseAppException(HTTPException):
