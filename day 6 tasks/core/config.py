@@ -1,6 +1,0 @@
-
-# The configurations are made here
-
-SECRET_KEY = "MY_SECRET_KEY"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60

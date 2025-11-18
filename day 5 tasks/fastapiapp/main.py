@@ -1,11 +1,7 @@
 #covered -> custom error handling
 #        -> asynchronous code
 
-
-
-
-
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 import asyncio
 import random
 

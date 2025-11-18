@@ -1,5 +1,6 @@
 import asyncio
 from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy import text
 
 engine = create_async_engine("postgresql+asyncpg://postgres:postgres@localhost/test_db")
 
