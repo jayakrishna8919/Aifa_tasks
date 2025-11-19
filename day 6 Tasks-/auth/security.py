@@ -4,8 +4,8 @@ from jose import jwt
 from passlib.context import CryptContext
 from auth.models import User, UserRole
 
-# Secret key - in production use environment variable
-SECRET_KEY = "secret-key"
+# Secret key 
+SECRET_KEY = "my-secret-key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

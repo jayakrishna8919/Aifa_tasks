@@ -1,4 +1,3 @@
-
 from enum import Enum
 from fastapi import Depends, HTTPException, status
 from auth.utils import get_current_user

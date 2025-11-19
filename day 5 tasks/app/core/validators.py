@@ -1,4 +1,3 @@
-# app/core/validators.py
 import re
 from pydantic import validator, BaseModel
 
