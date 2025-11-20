@@ -1,0 +1,36 @@
+2025-11-20 14:12:57,614 - INFO -  [323dd4dd-4b5b-4ed1-8197-d7cf0f2e782e] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-20 14:12:57,614 - INFO -  [323dd4dd-4b5b-4ed1-8197-d7cf0f2e782e] Response: 200 (0.0s)
+2025-11-20 14:12:57,664 - INFO -  [58bf96b0-d543-45f6-8c2d-7be998d1180f] Incoming Request: GET http://127.0.0.1:8000/openapi.json from 127.0.0.1
+2025-11-20 14:12:57,681 - INFO -  [58bf96b0-d543-45f6-8c2d-7be998d1180f] Response: 200 (0.0164s)
+2025-11-20 14:13:04,215 - INFO -  [949ecf31-c583-4b78-9af4-467a0d3308db] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:04,217 - INFO -  [949ecf31-c583-4b78-9af4-467a0d3308db] Response: 200 (0.0s)
+2025-11-20 14:13:53,904 - INFO -  [3c324ae9-b100-40dd-8c91-4271546b0269] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:53,904 - INFO -  [3c324ae9-b100-40dd-8c91-4271546b0269] Response: 200 (0.0s)
+2025-11-20 14:13:54,564 - INFO -  [f060c015-2a75-4559-9d85-68370d7caa37] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:54,566 - INFO -  [f060c015-2a75-4559-9d85-68370d7caa37] Response: 200 (0.002s)
+2025-11-20 14:13:54,729 - INFO -  [512543f7-1591-4c23-9050-7437e1def42b] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:54,729 - INFO -  [512543f7-1591-4c23-9050-7437e1def42b] Response: 200 (0.0s)
+2025-11-20 14:13:54,888 - INFO -  [9cbdc396-c680-44d6-b5f7-32f80e5dc682] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:54,889 - INFO -  [9cbdc396-c680-44d6-b5f7-32f80e5dc682] Response: 200 (0.0s)
+2025-11-20 14:13:55,063 - INFO -  [b72c6a4b-756a-4e8c-adc7-e874410ce388] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:55,063 - INFO -  [b72c6a4b-756a-4e8c-adc7-e874410ce388] Response: 200 (0.0003s)
+2025-11-20 14:13:55,218 - INFO -  [7706cdf5-5e65-4e54-89c7-5411e43ebe26] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:55,219 - INFO -  [7706cdf5-5e65-4e54-89c7-5411e43ebe26] Response: 200 (0.0003s)
+2025-11-20 14:13:55,367 - INFO -  [0d9e9a25-5e2a-4196-942a-147976752579] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:55,367 - INFO -  [0d9e9a25-5e2a-4196-942a-147976752579] Response: 200 (0.0003s)
+2025-11-20 14:13:55,535 - INFO -  [2318b772-e4de-4f3f-b2d5-4e2a1bdacdcc] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:55,536 - INFO -  [2318b772-e4de-4f3f-b2d5-4e2a1bdacdcc] Response: 200 (0.0003s)
+2025-11-20 14:13:55,699 - INFO -  [db8a4ae0-2b9f-402e-9946-b26fe919f6d2] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:55,699 - INFO -  [db8a4ae0-2b9f-402e-9946-b26fe919f6d2] Response: 200 (0.0s)
+2025-11-20 14:13:55,864 - INFO -  [c1c93666-1834-4c36-8be9-ebf11d0c1afb] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:55,865 - INFO -  [c1c93666-1834-4c36-8be9-ebf11d0c1afb] Response: 200 (0.0003s)
+2025-11-20 14:13:56,048 - INFO -  [0eae9107-201d-4df4-9f42-6e44dabfb70a] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:56,049 - INFO -  [0eae9107-201d-4df4-9f42-6e44dabfb70a] Response: 200 (0.0003s)
+2025-11-20 14:13:56,238 - INFO -  [921c8a9b-24a0-4de3-9d31-e73ec3d0a400] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:56,239 - INFO -  [921c8a9b-24a0-4de3-9d31-e73ec3d0a400] Response: 200 (0.0s)
+2025-11-20 14:13:56,456 - INFO -  [595c2113-278d-4fc3-bc13-0d07652c93f2] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-20 14:13:56,456 - INFO -  [595c2113-278d-4fc3-bc13-0d07652c93f2] Response: 200 (0.0s)
+2025-11-20 14:14:55,140 - INFO -  [bca534be-bdd4-4f0f-bd21-f8a474043ea8] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-20 14:14:55,144 - INFO -  [bca534be-bdd4-4f0f-bd21-f8a474043ea8] Response: 200 (0.0013s)
+2025-11-20 14:14:58,774 - INFO -  [ade1027f-656c-46bb-853f-fbb6708bb6c5] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-20 14:14:58,774 - INFO -  [ade1027f-656c-46bb-853f-fbb6708bb6c5] Response: 200 (0.0s)

@@ -1,0 +1,36 @@
+{
+  "file": "20251120064944_sample_data.csv",
+  "processed_at": "2025-11-20T06:49:44.063657Z",
+  "rows": 5,
+  "columns": [
+    "id",
+    "name",
+    "age",
+    "salary",
+    "city"
+  ],
+  "numeric_columns": {
+    "id": {
+      "count": 5,
+      "sum": 15.0,
+      "min": 1.0,
+      "max": 5.0,
+      "mean": 3.0
+    },
+    "age": {
+      "count": 5,
+      "sum": 140.0,
+      "min": 22.0,
+      "max": 35.0,
+      "mean": 28.0
+    },
+    "salary": {
+      "count": 5,
+      "sum": 282000.0,
+      "min": 45000.0,
+      "max": 75000.0,
+      "mean": 56400.0
+    }
+  },
+  "errors": []
+}
