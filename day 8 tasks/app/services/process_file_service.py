@@ -6,7 +6,7 @@ import json
 
 UPLOAD_DIR = "uploads"
 PROCESSED_DIR = "processed"
-MAX_FILE_SIZE = 5 * 1024 * 1024        # 5 MB limit 
+MAX_FILE_SIZE = 5 * 1024 * 1024                                              # 5 MB limit 
 ALLOWED_EXTENSIONS = {".csv"}
 REQUIRED_COLUMNS = ["id", "name", "age", "salary", "city"] 
 def get_extension(filename: str) -> str:
@@ -74,10 +74,10 @@ def process_csv_file(saved_path: str, summary_path: str):
                     }
 
     except Exception as exc:
-        # keep error info in summary
+       
         summary["errors"].append({"row": None, "error": f"processing error: {exc}"})
 
-    # write JSON summary
+    # JSON summary
     try:
         with open(summary_path, "w", encoding="utf-8") as out:
             json.dump(summary, out, indent=2, ensure_ascii=False)

@@ -34,3 +34,204 @@
 2025-11-20 14:14:55,144 - INFO -  [bca534be-bdd4-4f0f-bd21-f8a474043ea8] Response: 200 (0.0013s)
 2025-11-20 14:14:58,774 - INFO -  [ade1027f-656c-46bb-853f-fbb6708bb6c5] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
 2025-11-20 14:14:58,774 - INFO -  [ade1027f-656c-46bb-853f-fbb6708bb6c5] Response: 200 (0.0s)
+2025-11-21 12:22:32,017 - INFO - Redis cache initialized
+2025-11-21 12:22:33,986 - INFO -  [18fc991d-f75a-4371-9cc0-34df60e68d93] Incoming Request: GET http://127.0.0.1:8000/ from 127.0.0.1
+2025-11-21 12:22:33,986 - INFO -  [18fc991d-f75a-4371-9cc0-34df60e68d93] Response: 404 (0.0s)
+2025-11-21 12:22:38,623 - INFO -  [2562f0d5-944b-447b-af4b-34d1b126f121] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-21 12:22:38,624 - INFO -  [2562f0d5-944b-447b-af4b-34d1b126f121] Response: 200 (0.001s)
+2025-11-21 12:22:38,755 - INFO -  [b0db2fb5-15d4-4d82-87f8-d89b96abc274] Incoming Request: GET http://127.0.0.1:8000/openapi.json from 127.0.0.1
+2025-11-21 12:22:38,787 - INFO -  [b0db2fb5-15d4-4d82-87f8-d89b96abc274] Response: 200 (0.0318s)
+2025-11-21 12:22:44,585 - INFO -  [9e851f96-88cb-4fbe-8c1b-fe80ed4646e0] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-21 12:22:44,585 - INFO -  [9e851f96-88cb-4fbe-8c1b-fe80ed4646e0] Response: 200 (0.0s)
+2025-11-21 12:22:53,958 - INFO -  [86f88633-8049-4d0a-a103-286e152a6b85] Incoming Request: GET http://127.0.0.1:8000/cached-user/1 from 127.0.0.1
+2025-11-21 12:22:58,047 - WARNING - Error retrieving cache key 'fastapi-cache::df406e97266c29b8e3a3a432f6903345' from backend:
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 692, in connect
+    await self._connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 719, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\streams.py", line 47, in open_connection
+    transport, _ = await loop.create_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1063, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\decorator.py", line 178, in inner
+    ttl, cached = await backend.get_with_ttl(cache_key)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\backends\redis.py", line 16, in get_with_ttl
+    return await pipe.ttl(key).get(key).execute()  # type: ignore[union-attr,no-any-return]
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\client.py", line 4618, in execute
+    conn = await self.connection_pool.get_connection("MULTI", self.shard_hint)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1416, in get_connection
+    await connection.connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 698, in connect
+    raise ConnectionError(self._error_message(e))
+aioredis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2025-11-21 12:23:02,341 - WARNING - Error setting cache key 'fastapi-cache::df406e97266c29b8e3a3a432f6903345' in backend:
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 692, in connect
+    await self._connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 719, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\streams.py", line 47, in open_connection
+    transport, _ = await loop.create_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1063, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\decorator.py", line 191, in inner
+    await backend.set(cache_key, to_cache, expire)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\backends\redis.py", line 22, in set
+    await self.redis.set(key, value, ex=expire)  # type: ignore[union-attr]
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\client.py", line 1082, in execute_command
+    conn = self.connection or await pool.get_connection(command_name, **options)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1416, in get_connection
+    await connection.connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 698, in connect
+    raise ConnectionError(self._error_message(e))
+aioredis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2025-11-21 12:23:02,343 - INFO -  [86f88633-8049-4d0a-a103-286e152a6b85] Response: 200 (8.3843s)
+2025-11-21 12:23:23,578 - INFO -  [9d81e640-a8bb-4d26-80c6-36bfea4ecf88] Incoming Request: POST http://127.0.0.1:8000/cache/clear_all from 127.0.0.1
+2025-11-21 12:25:22,667 - INFO -  [a784ea0e-75a4-4616-85c1-13c2e8cf233a] Incoming Request: GET http://127.0.0.1:8000/cached-user/1 from 127.0.0.1
+2025-11-21 12:25:26,757 - WARNING - Error retrieving cache key 'fastapi-cache::df406e97266c29b8e3a3a432f6903345' from backend:
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 692, in connect
+    await self._connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 719, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\streams.py", line 47, in open_connection
+    transport, _ = await loop.create_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1063, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\decorator.py", line 178, in inner
+    ttl, cached = await backend.get_with_ttl(cache_key)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\backends\redis.py", line 16, in get_with_ttl
+    return await pipe.ttl(key).get(key).execute()  # type: ignore[union-attr,no-any-return]
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\client.py", line 4618, in execute
+    conn = await self.connection_pool.get_connection("MULTI", self.shard_hint)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1416, in get_connection
+    await connection.connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 698, in connect
+    raise ConnectionError(self._error_message(e))
+aioredis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2025-11-21 12:25:31,053 - WARNING - Error setting cache key 'fastapi-cache::df406e97266c29b8e3a3a432f6903345' in backend:
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 692, in connect
+    await self._connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 719, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\streams.py", line 47, in open_connection
+    transport, _ = await loop.create_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1063, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\decorator.py", line 191, in inner
+    await backend.set(cache_key, to_cache, expire)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\backends\redis.py", line 22, in set
+    await self.redis.set(key, value, ex=expire)  # type: ignore[union-attr]
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\client.py", line 1082, in execute_command
+    conn = self.connection or await pool.get_connection(command_name, **options)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1416, in get_connection
+    await connection.connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 698, in connect
+    raise ConnectionError(self._error_message(e))
+aioredis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2025-11-21 12:25:31,053 - INFO -  [a784ea0e-75a4-4616-85c1-13c2e8cf233a] Response: 200 (8.3855s)
+2025-11-21 12:25:46,361 - INFO -  [6c29b6c0-632e-48ee-b8cb-61e478bc1ca4] Incoming Request: DELETE http://127.0.0.1:8000/cache/invalidate/1 from 127.0.0.1
+2025-11-21 12:36:04,937 - INFO -  [c1bf1890-a433-42bf-83ad-cc531eda8ef7] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-21 12:36:04,939 - INFO -  [c1bf1890-a433-42bf-83ad-cc531eda8ef7] Response: 200 (0.002s)
+2025-11-21 12:36:05,057 - INFO -  [03356c39-abca-43d4-afe1-2cf8fe75d759] Incoming Request: GET http://127.0.0.1:8000/openapi.json from 127.0.0.1
+2025-11-21 12:36:05,058 - INFO -  [03356c39-abca-43d4-afe1-2cf8fe75d759] Response: 200 (0.001s)
+2025-11-21 12:36:09,428 - INFO -  [77338749-26fe-41ea-aee3-bd33dc0736a4] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-21 12:36:09,428 - INFO -  [77338749-26fe-41ea-aee3-bd33dc0736a4] Response: 200 (0.0s)
+2025-11-21 12:36:09,489 - INFO -  [1c7659f4-b730-4077-ba20-b036b0aa17e1] Incoming Request: GET http://127.0.0.1:8000/openapi.json from 127.0.0.1
+2025-11-21 12:36:09,489 - INFO -  [1c7659f4-b730-4077-ba20-b036b0aa17e1] Response: 200 (0.0s)
+2025-11-21 12:36:16,612 - INFO -  [fc2c5c65-e751-4e7b-9941-3e04a75cc560] Incoming Request: GET http://127.0.0.1:8000/cached-user/1 from 127.0.0.1
+2025-11-21 12:36:16,824 - INFO -  [fc2c5c65-e751-4e7b-9941-3e04a75cc560] Response: 200 (0.2124s)
+2025-11-21 12:36:25,608 - INFO -  [d1df732c-c930-4d5a-b0ed-5e6dc57be0b3] Incoming Request: DELETE http://127.0.0.1:8000/cache/invalidate/1 from 127.0.0.1
+2025-11-21 12:36:25,610 - INFO -  [d1df732c-c930-4d5a-b0ed-5e6dc57be0b3] Response: 200 (0.0011s)
+2025-11-21 12:36:37,576 - INFO -  [99d7cc13-adda-425b-ad63-5a581f903fd4] Incoming Request: POST http://127.0.0.1:8000/cache/clear_all from 127.0.0.1
+2025-11-21 12:36:37,576 - INFO -  [99d7cc13-adda-425b-ad63-5a581f903fd4] Response: 200 (0.0s)
+2025-11-21 12:37:37,447 - INFO -  [6600c0ae-f561-497a-9689-92ef459a950e] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-21 12:37:37,448 - INFO -  [6600c0ae-f561-497a-9689-92ef459a950e] Response: 200 (0.001s)
+2025-11-21 12:37:37,499 - INFO -  [1dbebffd-a1d0-45e1-91c1-51ee3a1e4d82] Incoming Request: GET http://127.0.0.1:8000/openapi.json from 127.0.0.1
+2025-11-21 12:37:37,500 - INFO -  [1dbebffd-a1d0-45e1-91c1-51ee3a1e4d82] Response: 200 (0.001s)
+2025-11-21 12:37:51,717 - INFO -  [a7f2dba7-7340-4142-8fa3-1cc4b8f57ed4] Incoming Request: GET http://127.0.0.1:8000/hello from 127.0.0.1
+2025-11-21 12:37:51,718 - INFO -  [a7f2dba7-7340-4142-8fa3-1cc4b8f57ed4] Response: 200 (0.0004s)
+2025-11-21 12:38:04,542 - INFO -  [c775b984-eaf0-4603-9b2c-4d8cd31eb35b] Incoming Request: GET http://127.0.0.1:8000/cached-user/222 from 127.0.0.1
+2025-11-21 12:38:08,598 - WARNING - Error retrieving cache key 'fastapi-cache::c117ea52db4eaa8573eba2d70c3923e9' from backend:
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1422, in get_connection
+    if await connection.can_read():
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 893, in can_read
+    return await self._parser.can_read(timeout)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 394, in can_read
+    return self._buffer and bool(await self._buffer.can_read(timeout))
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 294, in can_read
+    return bool(self.length) or await self._read_from_socket(
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 270, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+aioredis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\decorator.py", line 178, in inner
+    ttl, cached = await backend.get_with_ttl(cache_key)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\backends\redis.py", line 16, in get_with_ttl
+    return await pipe.ttl(key).get(key).execute()  # type: ignore[union-attr,no-any-return]
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\client.py", line 4618, in execute
+    conn = await self.connection_pool.get_connection("MULTI", self.shard_hint)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1426, in get_connection
+    await connection.connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 698, in connect
+    raise ConnectionError(self._error_message(e))
+aioredis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2025-11-21 12:38:12,895 - WARNING - Error setting cache key 'fastapi-cache::c117ea52db4eaa8573eba2d70c3923e9' in backend:
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 692, in connect
+    await self._connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 719, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\streams.py", line 47, in open_connection
+    transport, _ = await loop.create_connection(
+  File "C:\Users\AIFA USER 238\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1063, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\decorator.py", line 191, in inner
+    await backend.set(cache_key, to_cache, expire)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\fastapi_cache\backends\redis.py", line 22, in set
+    await self.redis.set(key, value, ex=expire)  # type: ignore[union-attr]
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\client.py", line 1082, in execute_command
+    conn = self.connection or await pool.get_connection(command_name, **options)
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 1416, in get_connection
+    await connection.connect()
+  File "C:\Users\AIFA USER 238\Desktop\task\env\lib\site-packages\aioredis\connection.py", line 698, in connect
+    raise ConnectionError(self._error_message(e))
+aioredis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6379).
+2025-11-21 12:38:12,895 - INFO -  [c775b984-eaf0-4603-9b2c-4d8cd31eb35b] Response: 200 (8.3531s)
+2025-11-21 12:38:24,676 - INFO -  [789b76c9-1723-459c-8e27-8579e49cca30] Incoming Request: DELETE http://127.0.0.1:8000/cache/invalidate/222 from 127.0.0.1
+2025-11-21 12:57:38,220 - INFO - Redis connection closed
+2025-11-21 13:05:36,946 - INFO -  [299ad9b6-da99-433a-bcd4-e96343f469ef] Incoming Request: GET http://127.0.0.1:8000/docs from 127.0.0.1
+2025-11-21 13:05:36,947 - INFO -  [299ad9b6-da99-433a-bcd4-e96343f469ef] Response: 200 (0.001s)
+2025-11-21 13:05:37,060 - INFO -  [fc1a3d08-2fb0-4334-9be4-fad20daa1e16] Incoming Request: GET http://127.0.0.1:8000/openapi.json from 127.0.0.1
+2025-11-21 13:05:37,074 - INFO -  [fc1a3d08-2fb0-4334-9be4-fad20daa1e16] Response: 200 (0.0142s)

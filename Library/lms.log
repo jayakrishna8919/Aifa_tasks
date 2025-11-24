@@ -1,0 +1,95 @@
+2025-11-21 11:19:21,455 - INFO - lms - Logging initialized
+2025-11-21 11:19:21,473 - INFO - lms - The fastapi app started
+2025-11-21 11:20:07,742 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 11:20:08,233 - INFO - lms - User created
+2025-11-21 11:20:53,705 - INFO - lms - User login successful
+2025-11-21 11:31:51,364 - INFO - lms - Logging initialized
+2025-11-21 11:31:51,385 - INFO - lms - The fastapi app started
+2025-11-21 11:33:44,771 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 11:33:45,107 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 11:33:52,460 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 11:33:59,697 - INFO - lms - User login successful
+2025-11-21 11:35:22,801 - INFO - lms - Book added succesfully
+2025-11-21 11:36:52,976 - INFO - lms - Book added succesfully
+2025-11-21 13:45:34,680 - INFO - lms - Logging initialized
+2025-11-21 13:45:34,704 - INFO - lms - The fastapi app started
+2025-11-21 13:46:14,961 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 13:46:22,426 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 13:46:35,660 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 13:46:36,370 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 13:46:42,748 - INFO - lms - User login successful
+2025-11-21 13:47:30,627 - INFO - lms - Logging initialized
+2025-11-21 13:47:30,648 - INFO - lms - The fastapi app started
+2025-11-21 13:47:54,489 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 13:47:54,749 - INFO - lms - User login successful
+2025-11-21 13:48:21,762 - INFO - lms - Logging initialized
+2025-11-21 13:48:21,781 - INFO - lms - The fastapi app started
+2025-11-21 13:48:56,644 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 13:48:57,413 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 13:49:03,888 - INFO - lms - User login successful
+2025-11-21 13:49:44,929 - INFO - lms - Logging initialized
+2025-11-21 13:49:44,947 - INFO - lms - The fastapi app started
+2025-11-21 13:49:51,409 - INFO - lms - Logging initialized
+2025-11-21 13:49:51,432 - INFO - lms - The fastapi app started
+2025-11-21 13:50:27,654 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 13:50:28,471 - INFO - lms - User login successful
+2025-11-21 13:51:10,595 - INFO - lms - Logging initialized
+2025-11-21 13:51:10,617 - INFO - lms - The fastapi app started
+2025-11-21 13:55:36,364 - INFO - lms - Logging initialized
+2025-11-21 13:55:36,387 - INFO - lms - The fastapi app started
+2025-11-21 13:56:05,336 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 13:56:06,075 - INFO - lms - User login successful
+2025-11-21 14:00:01,884 - INFO - lms - Book added succesfully
+2025-11-21 14:09:51,685 - INFO - lms - Logging initialized
+2025-11-21 14:09:51,709 - INFO - lms - The fastapi app started
+2025-11-21 14:26:45,762 - INFO - lms - Logging initialized
+2025-11-21 14:26:45,776 - INFO - lms - The fastapi app started
+2025-11-21 14:29:21,769 - INFO - lms - Logging initialized
+2025-11-21 14:29:21,793 - INFO - lms - The fastapi app started
+2025-11-21 14:29:59,222 - INFO - lms - Logging initialized
+2025-11-21 14:29:59,240 - INFO - lms - The fastapi app started
+2025-11-21 14:30:30,949 - INFO - lms - Logging initialized
+2025-11-21 14:30:30,966 - INFO - lms - The fastapi app started
+2025-11-21 14:36:19,077 - INFO - lms - Logging initialized
+2025-11-21 14:36:19,100 - INFO - lms - The fastapi app started
+2025-11-21 14:51:02,057 - WARNING - passlib.handlers.bcrypt - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\AIFA USER 238\Desktop\Library\lmsEnv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-21 14:51:02,873 - INFO - lms - User created
+2025-11-21 14:52:02,980 - ERROR - lms - Login Failed due to invalid credentials
+2025-11-21 14:52:27,716 - INFO - lms - User login successful
+2025-11-21 14:55:39,942 - INFO - lms - User created
+2025-11-21 14:56:13,545 - INFO - lms - User login successful
+2025-11-21 15:00:36,232 - INFO - lms - User login successful
+2025-11-21 15:01:23,365 - INFO - lms - The book_id 4 broowed by user :<models.models.User object at 0x0000019F801E6230>
+2025-11-21 15:03:59,720 - INFO - lms - The borrow id 1 returned success

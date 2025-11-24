@@ -1,8 +1,9 @@
-from fastapi import FastAPI,Request
+from fastapi import FastAPI,Request,HTTPException
 from routers.routes import router
 import uuid
 import time
 import logging
+
 
 
 logging.basicConfig(
@@ -11,8 +12,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger("request-logger")
-
-
 
 
 app = FastAPI()
@@ -48,6 +47,8 @@ async def custom_logging_middleware(request: Request, call_next):
 @app.get("/hello")
 async def hello():
     return {"message": "Hello World!"}
+
+
 
 app.include_router(router)
 
