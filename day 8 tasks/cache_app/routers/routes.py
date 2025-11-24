@@ -5,10 +5,8 @@ from configurations.db_config import AsyncSessionLocal
 from sqlalchemy import select
 from schemas.models import User
 from schemas.schemas import UserOut,UserCreate,UserUpdate
-from fastapi import Response
-from utils.dependencies import AccessCounterWindow,ACCESS_THRESHOLD,CACHE_TTL_SECONDS
-
-
+from fastapi import Response,Depends
+from utils.dependencies import AccessCounterWindow,ACCESS_THRESHOLD,CACHE_TTL_SECONDS,inproc_rate_limiter
 router=APIRouter()
 
 
@@ -41,7 +39,7 @@ async def get_user(user_id: int):
     return {"source": "db", "user": {"id": user.id, "name": user.name, "email": user.email}}
 
 @router.get("/users/{user_id}", response_model=UserOut)
-async def get_user(user_id: int, response: Response):
+async def get_user(user_id: int, response: Response,_rl: None = Depends(inproc_rate_limiter)):
     key = cache_key_for_user(user_id)
 
     # 1) If already cached -> immediate HIT

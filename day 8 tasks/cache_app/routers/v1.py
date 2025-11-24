@@ -24,7 +24,7 @@ async def get_user_v1(user_id: int):
 
 
 
-@routerv1.post("/users/", response_model=UserOutV1, status_code=201)
+@routerv1.post("/users/v1", response_model=UserOutV1, status_code=201)
 async def create_user_v1(payload: UserCreateV1):
     async with AsyncSessionLocal() as session:
         new_user = User(name=payload.name, email=payload.email)

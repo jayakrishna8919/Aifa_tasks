@@ -1,11 +1,12 @@
 from configurations.db_config import AsyncSessionLocal
-
+from fastapi import Depends,Request,HTTPException,status
 from sqlalchemy import select
 from schemas.models import User
 
 import time
 import asyncio
 from typing import Any, Dict, Tuple,Optional
+from configurations.rate_limit_config import WINDOW_SECONDS,REQUESTS
 
 CACHE_TTL_SECONDS = 60           # how long cached items live
 ACCESS_THRESHOLD = 4             # how many accesses required to add to cache
@@ -91,3 +92,35 @@ async def fetch_user_from_db(user_id: int):
 
 def cache_key_for_user(user_id: int) -> str:
     return f"user:{user_id}"
+
+
+
+_rate_store: Dict[str, Tuple[int, float]] = {}
+_rate_lock = asyncio.Lock()
+
+async def get_user_id(request: Request) -> str:
+   
+    uid = request.headers.get("X-User-Id")
+    if not uid:
+        # for unauthenticated users you might use IP address as fallback
+        uid = request.client.host
+    return uid
+
+async def inproc_rate_limiter(user_id: str = Depends(get_user_id)):
+    now = time.time()
+    async with _rate_lock:
+        entry = _rate_store.get(user_id)
+        if not entry or now > entry[1]:
+            # start new window
+            _rate_store[user_id] = (1, now + WINDOW_SECONDS)
+            return
+        count, expires_at = entry
+        if count >= REQUESTS:
+            retry_after = int(expires_at - now)
+            raise HTTPException(
+                status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+                detail="Too Many Requests",
+                headers={"Retry-After": str(retry_after)},
+            )
+        _rate_store[user_id] = (count + 1, expires_at)
+
