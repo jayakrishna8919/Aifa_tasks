@@ -4,7 +4,7 @@ from configurations.db_config import AsyncSessionLocal
 
 from sqlalchemy import select
 from schemas.models import User
-from schemas.schemas import UserOut,UserCreate
+from schemas.schemas import UserOut,UserCreate,UserUpdate
 from fastapi import Response
 from utils.dependencies import AccessCounterWindow,ACCESS_THRESHOLD,CACHE_TTL_SECONDS
 
@@ -74,7 +74,7 @@ async def get_user(user_id: int, response: Response):
 
 
 @router.put("/users/{user_id}")
-async def update_user(user_id: int, payload: dict):
+async def update_user(user_id: int, payload:UserUpdate):
     async with AsyncSessionLocal() as session:
         q = await session.execute(select(User).where(User.id == user_id))
         user = q.scalar_one_or_none()
